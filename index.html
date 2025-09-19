@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherCast Pro - Dynamic Weather Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dynamic Effects -->
+  <div class="floating-particles"></div>
+  <div class="star-layer"></div>
+  <div class="lightning-flash" id="lightningFlash"></div>
+
+  <!-- Weather Dashboard -->
+  <div class="weather-dashboard">
+    <header class="dashboard-header">
+      <h1 class="app-title">WeatherCast</h1>
+      <p class="app-subtitle">Professional Weather Dashboard</p>
+    </header>
+
+    <div class="search-container">
+      <div class="search-wrapper">
+        <div class="input-wrapper">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="cityInput" class="search-input" placeholder="Enter city name (e.g., Mumbai, London)" autocomplete="off">
+        </div>
+        <button class="search-btn" id="searchBtn" aria-label="Search Weather">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <button class="location-btn" id="locationBtn" aria-label="Use Current Location">
+        <i class="fas fa-location-arrow"></i> Use Current Location
+      </button>
+    </div>
+
+    <div class="error-message" id="errorMessage"></div>
+
+    <div class="loading" id="loadingSpinner">
+      <div class="loading-spinner"></div>
+      <p style="color: var(--text-secondary);">Fetching weather data...</p>
+    </div>
+
+    <div class="weather-display" id="weatherDisplay">
+      <div class="weather-main dashboard-content">
+        <div class="location-info" id="locationName">
+          <i class="fas fa-map-marker-alt"></i>
+          <span></span>
+        </div>
+        <div class="weather-icon" id="weatherIcon"></div>
+        <div class="temperature" id="temperature"></div>
+        <div class="weather-desc" id="weatherDesc"></div>
+        <div class="weather-details">
+          <div class="detail-card">
+            <div class="detail-icon"><i class="fas fa-eye"></i></div>
+            <div class="detail-label">Visibility</div>
+            <div class="detail-value" id="visibility">-</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon"><i class="fas fa-tint"></i></div>
+            <div class="detail-label">Humidity</div>
+            <div class="detail-value" id="humidity">-</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon"><i class="fas fa-wind"></i></div>
+            <div class="detail-label">Wind Speed</div>
+            <div class="detail-value" id="windSpeed">-</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon"><i class="fas fa-thermometer-half"></i></div>
+            <div class="detail-label">Feels Like</div>
+            <div class="detail-value" id="feelsLike">-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
